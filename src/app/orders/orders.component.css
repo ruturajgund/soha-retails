@@ -5,3 +5,17 @@
 .order-id-align{
     width: 15%;
 }
+
+.uk-overflow-auto{
+    margin: -15px;
+}
+
+.active{
+    font-size: 25px;
+    position: relative;
+    bottom: 10px;
+}
+
+.active a{
+    color: orange;
+}

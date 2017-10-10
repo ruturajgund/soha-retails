@@ -1,22 +1,38 @@
 <div class="container login-form">
     <alert></alert>
-  <h2 class="login-title">- Please Login -</h2>
-  <div class="panel panel-default">
-      <div class="panel-body">
-              <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
-              <div class="input-group login-userinput" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-                  <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                  <input type="text" class="form-control" name="username" placeholder="Username" [(ngModel)]="model.username" #username="ngModel" required>
-                  <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
-              </div>
-              <div class="input-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-                  <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                  <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="model.password" #password="ngModel" required >
-                  <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
-              </div>
-              <button class="btn btn-primary btn-block login-button" type="submit"><i class="glyphicon glyphicon-new-window"></i> Login</button>
+    <h2 class="login-title">- Please Login -</h2>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+                <!-- <div class="input-group login-userinput" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text" class="form-control" name="username" placeholder="Username" [(ngModel)]="model.username" #username="ngModel"
+                        required>
+                    <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+                </div>
+                <div class="input-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                    <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="model.password" #password="ngModel"
+                        required>
+                    <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+                </div> -->
+                <div class="uk-margin">
+                        <div class="uk-inline">
+                            <span class="uk-form-icon" uk-icon="icon: user"></span>
+                            <input class="uk-input" type="text" name="username" placeholder="Username" [(ngModel)]="model.username">
+                        </div>
+                    </div>
                 
-          </form>			
-      </div>
-  </div>
+                    <div class="uk-margin">
+                        <div class="uk-inline">
+                            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                            <input class="uk-input" type="password" name="password" placeholder="Password" [(ngModel)]="model.password">
+                        </div>
+                    </div>
+                    <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" type="submit">Login</button>
+                <!-- <button class="btn btn-primary btn-block login-button" type="submit"><i class="glyphicon glyphicon-new-window"></i> Login</button> -->
+
+            </form>
+        </div>
+    </div>
 </div>

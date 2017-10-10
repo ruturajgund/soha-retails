@@ -8,7 +8,10 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AlertComponent } from './directives/alert/alert.component';
-import { AlertService, AuthenticationService, OrdersServices } from './services/index';
+import {
+  AlertService, AuthenticationService, OrdersServices,
+  PaginationService
+} from './services/index';
 import { OrdersComponent } from './orders/orders.component';
 
 const ROUTES = [
@@ -56,7 +59,8 @@ const ROUTES = [
   providers: [
     AlertService,
     AuthenticationService,
-    OrdersServices
+    OrdersServices,
+    PaginationService
   ],
   bootstrap: [AppComponent]
 })

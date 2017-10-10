@@ -12,8 +12,6 @@ export class OrdersServices {
 
     getAllOrders() {
         return this.http.get('/api/getAllOrders').map((response: Response) => {
-            console.log(response);
-            
             return response;
         });
     }
