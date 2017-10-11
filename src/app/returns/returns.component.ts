@@ -1,38 +1,38 @@
 import { Component, OnInit } from '@angular/core';
-import { OrdersServices, PaginationService } from '../services/index'
-import { Order } from '../models/index';
+import { Return } from '../models/index'
+import { ReturnsService, PaginationService } from '../services/index'
 import * as _ from 'underscore';
 
 @Component({
-  selector: 'app-orders',
-  templateUrl: './orders.component.html',
-  styleUrls: ['./orders.component.css']
+  selector: 'app-returns',
+  templateUrl: './returns.component.html',
+  styleUrls: ['./returns.component.css']
 })
-export class OrdersComponent implements OnInit {
-  orders: Order[] = [];
-  selectedOrder = new Order();
+export class ReturnsComponent implements OnInit {
+ 
+  returns : Return[];
   spinnerFlag: boolean = false;
   paginationFlag: boolean = true;
   pager: any = {};
-  pagedItems: Order[];
+  pagedItems: Return[];
   search: string;
-
+  selectedReturn = new Return();
+  
   constructor(
-    private ordersServices: OrdersServices,
+    private returnsService: ReturnsService,
     private paginationService: PaginationService
   ) { }
 
   ngOnInit() {
     this.spinnerFlag = true;
-    this.ordersServices.getAllOrders().subscribe(
+    this.returnsService.getAllReturns().subscribe(
       response => {
         var data = response.json();
-        this.orders = data.orders;
+        this.returns = data.returns;
         this.spinnerFlag = false;
         this.setPage(1);
       });
   }
-
 
   setPage(page: number) {
     if (page < 1 || page > this.pager.totalPages) {
@@ -40,21 +40,22 @@ export class OrdersComponent implements OnInit {
     }
 
     // get pager object from service
-    this.pager = this.paginationService.getPager(this.orders.length, page);
+    this.pager = this.paginationService.getPager(this.returns.length, page);
 
     // get current page of items
-    this.pagedItems = this.orders.slice(this.pager.startIndex, this.pager.endIndex + 1);
+    this.pagedItems = this.returns.slice(this.pager.startIndex, this.pager.endIndex + 1);
   }
 
   getOrderDetailsById(orderId) {
-    this.selectedOrder = _.findWhere(this.orders, { amazonOrderId: orderId });;
+    this.selectedReturn = _.findWhere(this.returns, { orderId: orderId });;
   }
+
 
   searchByProduct(search) {
     if (search.length != 0) {
       this.pagedItems = [];
       this.paginationFlag = false;
-      this.orders.forEach(order => {
+      this.returns.forEach(order => {
         if (order.productName.match(search)) {
           this.pagedItems.push(order);
         }

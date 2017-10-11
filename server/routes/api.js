@@ -24,10 +24,12 @@ mongodb.MongoClient.connect(config.connectionString, function (err, database) {
 
 var USERS_COLLECTION = "users";
 var ORDERS_COLLECTION = "orders";
+var RETURNS_COLLECTION = "returns"
 
 router.post('/register', register);
 router.post('/authenticate', authenticate);
 router.get('/getAllOrders', getAllOrders);
+router.get('/getAllReturns', getAllReturns);
 
 var currentUser;
 function register(req, res) {
@@ -67,11 +69,18 @@ function authenticate(req, res) {
 }
 
 function getAllOrders(req, res) {
-    db.collection(ORDERS_COLLECTION).find().toArray(function(error,orders){
-      if (error) res.send({message:"Database Problem.",status: 500});
-      
-      res.send({orders: orders,status: 200});
+  db.collection(ORDERS_COLLECTION).find().toArray(function (error, orders) {
+    if (error) res.send({ message: "Database Problem.", status: 500 });
+
+    res.send({ orders: orders, status: 200 });
   });
 }
 
+function getAllReturns(req, res) {
+  db.collection(RETURNS_COLLECTION).find().toArray(function (error, returns) {
+    if (error) res.send({ message: "Database Problem.", status: 500 });
+
+    res.send({ returns: returns, status: 200 });
+  });
+}
 module.exports = router;

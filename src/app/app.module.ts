@@ -10,9 +10,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AlertComponent } from './directives/alert/alert.component';
 import {
   AlertService, AuthenticationService, OrdersServices,
-  PaginationService
+  PaginationService, ReturnsService
 } from './services/index';
 import { OrdersComponent } from './orders/orders.component';
+import { ReturnsComponent } from './returns/returns.component';
 
 const ROUTES = [
   {
@@ -36,6 +37,10 @@ const ROUTES = [
       {
         path: 'orders',
         component: OrdersComponent
+      },
+      {
+        path: 'returns',
+        component: ReturnsComponent
       }
     ]
   }
@@ -48,7 +53,8 @@ const ROUTES = [
     LoginComponent,
     DashboardComponent,
     AlertComponent,
-    OrdersComponent
+    OrdersComponent,
+    ReturnsComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +66,8 @@ const ROUTES = [
     AlertService,
     AuthenticationService,
     OrdersServices,
-    PaginationService
+    PaginationService,
+    ReturnsService
   ],
   bootstrap: [AppComponent]
 })
