@@ -30,6 +30,7 @@ router.post('/register', register);
 router.post('/authenticate', authenticate);
 router.get('/getAllOrders', getAllOrders);
 router.get('/getAllReturns', getAllReturns);
+router.post('/searchBy', searchBy);
 
 var currentUser;
 function register(req, res) {
@@ -69,7 +70,7 @@ function authenticate(req, res) {
 }
 
 function getAllOrders(req, res) {
-  db.collection(ORDERS_COLLECTION).find().toArray(function (error, orders) {
+  db.collection(ORDERS_COLLECTION).find().sort({purchaseDate : 1}).toArray(function (error, orders) {
     if (error) res.send({ message: "Database Problem.", status: 500 });
 
     res.send({ orders: orders, status: 200 });
@@ -77,10 +78,48 @@ function getAllOrders(req, res) {
 }
 
 function getAllReturns(req, res) {
-  db.collection(RETURNS_COLLECTION).find().toArray(function (error, returns) {
+  db.collection(RETURNS_COLLECTION).find().sort({returnDate : 1}).toArray(function (error, returns) {
     if (error) res.send({ message: "Database Problem.", status: 500 });
 
     res.send({ returns: returns, status: 200 });
   });
 }
+
+function searchBy(req, res) {
+  var query = {};
+  var searchModel = req.body;
+  if (searchModel.asin != undefined && searchModel.asin != '') {
+    query.asin = searchModel.asin;
+  }
+  if (searchModel.emailId != undefined && searchModel.emailId != '') {
+    query.emailId = searchModel.emailId;
+  }
+  if(searchModel.particularDate != undefined && searchModel.particularDate !=''){
+    var date1 = new Date(searchModel.particularDate);
+    var date2 = new Date(searchModel.particularDate);
+    date1 = date1.toISOString().slice(0,-5) + '+00.00';
+    date2 = date2.toISOString().slice(0,-13) + '18:30:00+00.00'
+    query.purchaseDate = {
+      $gte: date1,
+      $lt : date2
+    };
+  }
+  if(searchModel.startDate != undefined && searchModel.startDate != '' && 
+    searchModel.endDate != undefined && searchModel.endDate != ''){
+      var date1 = new Date(searchModel.startDate);
+      var date2 = new Date(searchModel.endDate);
+      date1 = date1.toISOString().slice(0,-5) + '+00.00';
+      date2 = date2.toISOString().slice(0,-13) + '18:30:00+00.00'
+      query.purchaseDate = {
+        $gte: date1,
+        $lt : date2
+      };
+    }
+  db.collection(ORDERS_COLLECTION).find(query).sort({purchaseDate : 1}).toArray(function (error, orders) {
+    if (error) res.send({ message: "Database Problem.", status: 500 });
+
+    res.send({ orders: orders, status: 200 });
+  });
+}
+
 module.exports = router;

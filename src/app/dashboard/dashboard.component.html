@@ -1,34 +1,34 @@
 <nav class="navbar navbar-inverse navbar-static-top">
-  <div class="container">
-  <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
-      </button>   
-      <a class="navbar-brand" [routerLink]="['/dashboard']">{{brandName}}
+      </button>
+            <a class="navbar-brand" [routerLink]="['/dashboard']">{{brandName}}
       </a>
-  </div>
-  <div id="navbar3" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right">
-      <li><a [routerLink]="['/dashboard/returns']">Returns</a></li>
-      <li><a [routerLink]="['/dashboard/orders']">Orders</a></li>
-      <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{currentUser.firstName}} {{currentUser.lastName}} <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-          <li><a [routerLink]="['/dashboard/accountDetails']">My Account</a></li>
-          <li><a (click)="logout()">Logout</a></li>
-          </ul>
-      </li>
-      </ul>
-  </div>
-  </div>
+        </div>
+        <div id="navbar3" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a [routerLink]="['/dashboard/returns']">Returns</a></li>
+                <li><a [routerLink]="['/dashboard/orders']">Orders</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{currentUser.firstName}} {{currentUser.lastName}} <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a [routerLink]="['/dashboard/accountDetails']">My Account</a></li>
+                        <li><a (click)="logout()">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
 <div class="container">
-<div class="row">
-  <div class="side-menu">
-<!--   
+    <div class="row">
+        <div class="side-menu">
+            <!--   
   <nav class="navbar navbar-default col-sm-3 navbar-container" role="navigation">
   <div class="navbar-header">
       <div class="brand-wrapper">
@@ -65,12 +65,12 @@
       </ul>
   </div>
 </nav> -->
-<div class="col-sm-12 side-panel">   
-      <div class="col-md-6" style="float: right;margin-top: 5px;">
-          <alert></alert>
-      </div>
-      <router-outlet></router-outlet>
-</div>
-</div>
-</div>
+            <div class="col-sm-12 side-panel">
+                <div class="col-md-6" style="float: right;margin-top: 5px;">
+                    <alert></alert>
+                </div>
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
 </div>

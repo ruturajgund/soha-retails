@@ -1,10 +1,4 @@
 
-<div class="uk-margin">
-    <form class="uk-search uk-search-default">
-        <span class="uk-search-icon-flip" uk-search-icon></span>
-        <input class="uk-search-input" type="search" placeholder="Search..." name="search" [(ngModel)]="search" (ngModelChange)="searchByProduct($event)">
-    </form>
-</div>
 <!-- This is the modal -->
 <div id="modal-order" uk-modal>
     <div class="uk-modal-dialog uk-modal-body">
@@ -68,6 +62,40 @@
                     </div>
                 </div> -->
             </form>
+    </div>
+</div>
+<button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-push">Search</button>
+<div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+        <h3>SEARCH MENU</h3>
+
+        <form class="uk-form-stacked">
+
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-stacked-text">Search By Asin:</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" id="form-stacked-text" type="text" placeholder="eg: B00EIC1I7A">
+                </div>
+            </div>
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-stacked-text">Search By Date:</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" id="form-stacked-text" type="text" placeholder="eg: MM/DD/YYYY">
+                </div>
+            </div>
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-stacked-text">Search By Customer's Email Id:</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" id="form-stacked-text" type="text" placeholder="eg: abc@domain.com">
+                </div>
+            </div>
+
+        </form>
+        <button class="uk-button uk-button-default uk-margin-small-right pull-right" type="button">SUBMIT</button>
+
     </div>
 </div>
 <div class="uk-overflow-auto">

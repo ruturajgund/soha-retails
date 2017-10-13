@@ -10,7 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AlertComponent } from './directives/alert/alert.component';
 import {
   AlertService, AuthenticationService, OrdersServices,
-  PaginationService, ReturnsService
+  PaginationService, ReturnsService, SearchService
 } from './services/index';
 import { OrdersComponent } from './orders/orders.component';
 import { ReturnsComponent } from './returns/returns.component';
@@ -67,7 +67,8 @@ const ROUTES = [
     AuthenticationService,
     OrdersServices,
     PaginationService,
-    ReturnsService
+    ReturnsService,
+    SearchService
   ],
   bootstrap: [AppComponent]
 })

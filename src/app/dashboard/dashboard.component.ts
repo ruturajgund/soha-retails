@@ -10,6 +10,7 @@ export class DashboardComponent implements OnInit {
 
   currentUser: any = {};
   brandName : string = "Soha Retail Protal";
+  
 
   constructor(
     private authenticationService: AuthenticationService

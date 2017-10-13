@@ -5,8 +5,9 @@
     margin-bottom: 0px;
 }
   .side-panel{
-	overflow-y: scroll;
-    height: 93%;
+		overflow-y: scroll;
+		height: 93%;
+		padding-top: 10px;
   }
   
   .side-menu {

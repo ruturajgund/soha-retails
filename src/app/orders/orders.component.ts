@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OrdersServices, PaginationService } from '../services/index'
+import { OrdersServices, PaginationService, SearchService } from '../services/index'
 import { Order } from '../models/index';
 import * as _ from 'underscore';
 
@@ -15,11 +15,13 @@ export class OrdersComponent implements OnInit {
   paginationFlag: boolean = true;
   pager: any = {};
   pagedItems: Order[];
-  search: string;
+  searchModel: any = {};
+  datePickerFlag: boolean = true;
 
-  constructor(
+    constructor(
     private ordersServices: OrdersServices,
-    private paginationService: PaginationService
+    private paginationService: PaginationService,
+    private searchService: SearchService
   ) { }
 
   ngOnInit() {
@@ -50,20 +52,40 @@ export class OrdersComponent implements OnInit {
     this.selectedOrder = _.findWhere(this.orders, { amazonOrderId: orderId });;
   }
 
-  searchByProduct(search) {
-    if (search.length != 0) {
-      this.pagedItems = [];
-      this.paginationFlag = false;
-      this.orders.forEach(order => {
-        if (order.productName.match(search)) {
-          this.pagedItems.push(order);
-        }
+  search(){
+    this.spinnerFlag = true;
+    this.orders = [];
+    this.searchService.search(this.searchModel).subscribe(
+      response => {
+        var data = response.json();
+        this.orders = data.orders;
+        this.spinnerFlag = false;
+        this.setPage(1);
       });
+    
+  }
+
+  checkVisibility(flag){
+    if(flag == "particularDate"){
+      this.searchModel.startDate="";
+      this.searchModel.endDate="";
+      this.datePickerFlag = true;
     }
-    else {
-      this.paginationFlag = true;
-      this.pagedItems = [];
-      this.setPage(1);
+    else{
+      this.searchModel.particularDate = "";
+      this.datePickerFlag = false;
     }
+  }
+
+  formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+  
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+  
+    return [year, month, day].join('-');
   }
 }
