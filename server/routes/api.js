@@ -25,12 +25,14 @@ mongodb.MongoClient.connect(config.connectionString, function (err, database) {
 var USERS_COLLECTION = "users";
 var ORDERS_COLLECTION = "orders";
 var RETURNS_COLLECTION = "returns"
+var VENDORS_COLLECTION = "vendors"
 
 router.post('/register', register);
 router.post('/authenticate', authenticate);
 router.get('/getAllOrders', getAllOrders);
 router.get('/getAllReturns', getAllReturns);
 router.post('/searchBy', searchBy);
+router.post('/saveVendorDetails', saveVendorDetails);
 
 var currentUser;
 function register(req, res) {
@@ -119,6 +121,15 @@ function searchBy(req, res) {
     if (error) res.send({ message: "Database Problem.", status: 500 });
 
     res.send({ orders: orders, status: 200 });
+  });
+}
+
+function saveVendorDetails(req, res){
+  
+  db.collection(VENDORS_COLLECTION).insert(req.body,function(error,doc){
+    if(error) res.send({message:"Database Problem.",status: 500});
+    
+    res.send({ message: "Details saved successfully..", status: 200 })
   });
 }
 

@@ -10,10 +10,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AlertComponent } from './directives/alert/alert.component';
 import {
   AlertService, AuthenticationService, OrdersServices,
-  PaginationService, ReturnsService, SearchService
+  PaginationService, ReturnsService, SearchService, VendorService
 } from './services/index';
 import { OrdersComponent } from './orders/orders.component';
 import { ReturnsComponent } from './returns/returns.component';
+import { VendorRegistrationComponent } from './vendor-registration/vendor-registration.component';
 
 const ROUTES = [
   {
@@ -31,7 +32,7 @@ const ROUTES = [
     children: [
       {
         path: '',
-        redirectTo: 'orders',
+        redirectTo: 'vendorRegistration',
         pathMatch: 'full'
       },
       {
@@ -41,6 +42,10 @@ const ROUTES = [
       {
         path: 'returns',
         component: ReturnsComponent
+      },
+      {
+        path: 'vendorRegistration',
+        component: VendorRegistrationComponent
       }
     ]
   }
@@ -54,7 +59,8 @@ const ROUTES = [
     DashboardComponent,
     AlertComponent,
     OrdersComponent,
-    ReturnsComponent
+    ReturnsComponent,
+    VendorRegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +74,8 @@ const ROUTES = [
     OrdersServices,
     PaginationService,
     ReturnsService,
-    SearchService
+    SearchService,
+    VendorService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,221 @@
+<div class="container">
+  <h3 class="uk-heading-large" *ngIf="formVisibilityFlag">
+    Vendor Registration Form
+  </h3>
+  <div *ngIf="spinnerFlag" class="col-md-12 col-sm-12 col-lg-12" uk-spinner align="center"></div>
+  <div class="vendor-form-container" *ngIf="formVisibilityFlag">
+    <form class="uk-form uk-form-stacked uk-form-horizontal" name="form" #f="ngForm" novalidate>
+      <ul uk-accordion="multiple: true">
+        <li class="uk-open">
+          <h3 class="uk-accordion-title">COMPANY DETAILS AND GENERAL INFORMATION</h3>
+          <div class="uk-accordion-content">
+            <div class="uk-margin">
+              <label class="uk-form-label" for="bussinessName">NAME OF COMPANY/BUSINESS</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" name="bussinessName" type="text" [(ngModel)]="vendor.bussinessName" required>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="address">ADDRESS</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" name="address" type="text" [(ngModel)]="vendor.address" required>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="telephoneNumber">TELEPHONE NUMBER</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" name="telephoneNumber" type="text" [(ngModel)]="vendor.telephoneNumber" required>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="faxNumber">FAX NUMBER</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" name="faxNumber" type="text" [(ngModel)]="vendor.faxNumber" required>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="email">E-MAIL ADDRESS</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" name="email" type="text" [(ngModel)]="vendor.email" required>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="wedsiteAddress">WEB SITE ADDRESS</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" name="wedsiteAddress" type="text" [(ngModel)]="vendor.wedsiteAddress" required>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="companyName">NAME & TITLE OF COMPANY
+                        REPRESENTATIVE</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" name="companyName" type="text" [(ngModel)]="vendor.companyName" required>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="companyEmail">DIRECT E-MAIL ADDRESS OF COMPANY
+                        REPRESENTATIVE</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" name="companyEmail" type="text" [(ngModel)]="vendor.companyEmail" required>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="form-stacked-text" style="width: 100%;">TELEPHONE NUMBERS OF COMPANY
+                        REPRESENTATIVE</label><br><br>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="companyDirectNumber">(A) DIRECT NUMBER</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" name="companyDirectNumber" type="text" [(ngModel)]="vendor.companyDirectNumber" required>
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="companyMobileNumber">(B) MOBILE NUMBER</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" name="companyMobileNumber" type="text" [(ngModel)]="vendor.companyMobileNumber" required>
+                </div>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="establishDate">DATE COMPANY WAS ESTABLISHED</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" name="establishDate" type="text" [(ngModel)]="vendor.establishDate" required>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="doExport">DO YOU EXPORT?</label>
+              <div class="uk-form-controls uk-form-controls-text">
+                <input class="uk-radio" type="radio" value="Yes" name="doExport" (change)="doExport($event.target.value)">                Yes
+                <input class="uk-radio" type="radio" value="No" name="doExport" (change)="doExport($event.target.value)">                No
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="haveExportLicense">DO YOU HAVE EXPORT LICENSE ?</label>
+              <div class="uk-form-controls uk-form-controls-text">
+                <input class="uk-radio" type="radio" value="Yes" name="haveExportLicense" (change)="haveExportLicense($event.target.value)">                Yes
+                <input class="uk-radio" type="radio" value="No" name="haveExportLicense" (change)="haveExportLicense($event.target.value)">                No
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="doShipGoodToOverseas">WILL YOU BE ABLE TO SHIP GOODS TO OUR
+                    DESIGNATION OVERSEAS</label>
+              <div class="uk-form-controls uk-form-controls-text">
+                <input class="uk-radio" type="radio" value="Yes" name="doShipGoodToOverseas" (change)="doShipGoodToOverseas($event.target.value)">                Yes
+                <input class="uk-radio" type="radio" value="No" name="doShipGoodToOverseas" (change)="doShipGoodToOverseas($event.target.value)">                No
+              </div>
+            </div><br>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="categgories">WHAT PRODUCT CATEGGORIES DO YOU OFFER ?</label>
+              <div class="uk-form-controls">
+                <textarea class="uk-textarea" name="categgories" type="text" [(ngModel)]="vendor.categgories" required></textarea>
+              </div>
+            </div>
+            <!-- <div class="uk-margin">
+              <label class="uk-form-label" for="form-stacked-text">WEBSITE ADDRESS (IF ANY)</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" id="form-stacked-text" type="text">
+              </div>
+            </div> -->
+            <div class="uk-margin">
+              <label class="uk-form-label" for="productCatalog">HOW CAN YOU SHARE YOUR PRODUCT CATALOG
+                        WITH US?</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" name="productCatalog" type="text" [(ngModel)]="vendor.productCatalog" required>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="legalStructure">LEGAL STRUCTURE</label>
+              <div class="uk-form-controls uk-form-controls-text">
+                <input class="uk-radio" type="radio" value="Corporation" name="legalStructure" (change)="legalStructure($event.target.value)">                Corporation
+                <input class="uk-radio" type="radio" value="Partnership" name="legalStructure" (change)="legalStructure($event.target.value)">                Partnership
+                <input class="uk-radio" type="radio" value="Sole Proprietorship" name="legalStructure" (change)="legalStructure($event.target.value)">                Sole Proprietorship
+                <input class="uk-radio" type="radio" value="Joint Venture" name="legalStructure" (change)="legalStructure($event.target.value)">                Joint Venture
+                <input class="uk-radio" type="radio" value="Franchise" name="legalStructure" (change)="legalStructure($event.target.value)">                Franchise
+                <input class="uk-radio" type="radio" value="Non-Profit" name="legalStructure" (change)="legalStructure($event.target.value)">                Non-Profit
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="servicesDetails">DETAILS ON SERVICES OR GOODS YOUR COMPANY SUPPLIES</label>
+              <div class="uk-form-controls">
+                <textarea class="uk-textarea" name="servicesDetails" type="text" [(ngModel)]="vendor.servicesDetails" required></textarea>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="internationalBussiness">HAVE YOU PREVIOUSLY DONE BUSINESS WITH OTHER INTERNATIONAL ORGANIZATIONS ?</label>
+              <div class="uk-form-controls uk-form-controls-text">
+                <input class="uk-radio" type="radio" value="Yes" name="internationalBussiness" (change)="internationalBussiness($event.target.value)">                Yes
+                <input class="uk-radio" type="radio" value="No" name="internationalBussiness" (change)="internationalBussiness($event.target.value)">                No
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <h3 class="uk-accordion-title">PAYMENT</h3>
+          <div class="uk-accordion-content">
+            <div class="uk-margin">
+              <label class="uk-form-label" for="bankName">PAYPAL ID OR BANK NAME</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" name="bankName" type="text" [(ngModel)]="vendor.bankName" required>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="bankAddress">BANK ADDRESS</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" name="bankAddress" type="text" [(ngModel)]="vendor.bankAddress" required>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="beneficiaryName">BENEFICIARY NAME</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" name="beneficiaryName" type="text" [(ngModel)]="vendor.beneficiaryName" required>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="iban">INTERNATIONAL BANK ACCOUNT NUMBER
+                  (IBAN)</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" name="iban" type="text" [(ngModel)]="vendor.iban" required>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="bic">SWIFT/BANK IDENTIFIER CODE (BIC)</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" name="bic" type="text" [(ngModel)]="vendor.bic" required>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="accountCurrency">ACCOUNT CURRENCY</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" name="accountCurrency" type="text" [(ngModel)]="vendor.accountCurrency" required>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="bankAccountNumber">BANK ACCOUNT NUMBER</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" name="bankAccountNumber" type="text" [(ngModel)]="vendor.bankAccountNumber" required>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <h3 class="uk-accordion-title">SUPPORTING DOCUMENTATION</h3>
+          <div class="uk-accordion-content">
+            <p>Please list documents you can submit or have attached, like licenses or FTI-F accreditation etc.</p>
+          </div>
+        </li>
+        <li>
+          <h3 class="uk-accordion-title">CERTIFICATION</h3>
+          <div class="uk-accordion-content">
+            <p>I, the undersigned, hereby accept the WTO General Terms & Conditions, a copy of which has been provided to me,
+              and warrant that the information provided in this form is correct and, in the event of changes, details will
+              be provided as soon as possible:</p>
+          </div>
+        </li>
+      </ul>
+      <button class="uk-button uk-button-primary pull-right" [disabled]="!f.form.valid" (click)="submit()">Submit</button>
+    </form>
+  </div>
+  <div *ngIf="!formVisibilityFlag" class="container">
+    <h1 style="padding: 30px;">Thank You....!Your Details have been saved successfully.</h1>
+    <button class="uk-button uk-button-secondary uk-button-large" href="https://menlily.com/">GO BACK TO ME'N LILY</button>
+  </div>
+</div>

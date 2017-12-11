@@ -1,0 +1,44 @@
+@media (min-width: 960px)
+{
+    .uk-form-horizontal .uk-form-label {
+        width: 350px;
+    }
+
+    .uk-form-horizontal .uk-form-controls {
+        margin-left: 360px;
+    }
+}
+
+.uk-input{
+    border: 1px dashed #989696;
+}
+
+.uk-textarea{
+    border: 1px dashed #989696;
+}
+
+.vendor-form-container{
+    padding: 10px 30px;
+}
+
+.uk-form-label{
+    font-weight: 100;
+}
+
+.uk-accordion-content {
+    padding: 20px 80px;
+    border: 1px solid #e5e5e5;
+}
+
+.uk-accordion-title{
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 13px;
+    background: #cccccc;
+}
+
+.uk-margin{
+    margin-top: 10px !important;
+    margin-bottom: 10px;
+}
