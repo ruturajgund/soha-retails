@@ -1,3 +1,4 @@
+import { Document } from './index'
 
 export class Vendor{
 
@@ -27,5 +28,6 @@ export class Vendor{
     bic: string;
     accountCurrency: string;
     bankAccountNumber: string;
+    documents: Document[];
     
 }

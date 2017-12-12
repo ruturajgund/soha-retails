@@ -10,19 +10,19 @@
           <h3 class="uk-accordion-title">COMPANY DETAILS AND GENERAL INFORMATION</h3>
           <div class="uk-accordion-content">
             <div class="uk-margin">
-              <label class="uk-form-label" for="bussinessName">NAME OF COMPANY/BUSINESS</label>
+              <label class="uk-form-label" for="bussinessName">NAME OF COMPANY/BUSINESS*</label>
               <div class="uk-form-controls">
                 <input class="uk-input" name="bussinessName" type="text" [(ngModel)]="vendor.bussinessName" required>
               </div>
             </div>
             <div class="uk-margin">
-              <label class="uk-form-label" for="address">ADDRESS</label>
+              <label class="uk-form-label" for="address">ADDRESS*</label>
               <div class="uk-form-controls">
                 <input class="uk-input" name="address" type="text" [(ngModel)]="vendor.address" required>
               </div>
             </div>
             <div class="uk-margin">
-              <label class="uk-form-label" for="telephoneNumber">TELEPHONE NUMBER</label>
+              <label class="uk-form-label" for="telephoneNumber">TELEPHONE NUMBER*</label>
               <div class="uk-form-controls">
                 <input class="uk-input" name="telephoneNumber" type="text" [(ngModel)]="vendor.telephoneNumber" required>
               </div>
@@ -30,11 +30,11 @@
             <div class="uk-margin">
               <label class="uk-form-label" for="faxNumber">FAX NUMBER</label>
               <div class="uk-form-controls">
-                <input class="uk-input" name="faxNumber" type="text" [(ngModel)]="vendor.faxNumber" required>
+                <input class="uk-input" name="faxNumber" type="text" [(ngModel)]="vendor.faxNumber">
               </div>
             </div>
             <div class="uk-margin">
-              <label class="uk-form-label" for="email">E-MAIL ADDRESS</label>
+              <label class="uk-form-label" for="email">E-MAIL ADDRESS*</label>
               <div class="uk-form-controls">
                 <input class="uk-input" name="email" type="text" [(ngModel)]="vendor.email" required>
               </div>
@@ -42,19 +42,19 @@
             <div class="uk-margin">
               <label class="uk-form-label" for="wedsiteAddress">WEB SITE ADDRESS</label>
               <div class="uk-form-controls">
-                <input class="uk-input" name="wedsiteAddress" type="text" [(ngModel)]="vendor.wedsiteAddress" required>
+                <input class="uk-input" name="wedsiteAddress" type="text" [(ngModel)]="vendor.wedsiteAddress">
               </div>
             </div>
             <div class="uk-margin">
               <label class="uk-form-label" for="companyName">NAME & TITLE OF COMPANY
-                        REPRESENTATIVE</label>
+                        REPRESENTATIVE*</label>
               <div class="uk-form-controls">
                 <input class="uk-input" name="companyName" type="text" [(ngModel)]="vendor.companyName" required>
               </div>
             </div>
             <div class="uk-margin">
               <label class="uk-form-label" for="companyEmail">DIRECT E-MAIL ADDRESS OF COMPANY
-                        REPRESENTATIVE</label>
+                        REPRESENTATIVE*</label>
               <div class="uk-form-controls">
                 <input class="uk-input" name="companyEmail" type="text" [(ngModel)]="vendor.companyEmail" required>
               </div>
@@ -65,46 +65,46 @@
               <div class="uk-margin">
                 <label class="uk-form-label" for="companyDirectNumber">(A) DIRECT NUMBER</label>
                 <div class="uk-form-controls">
-                  <input class="uk-input" name="companyDirectNumber" type="text" [(ngModel)]="vendor.companyDirectNumber" required>
+                  <input class="uk-input" name="companyDirectNumber" type="text" [(ngModel)]="vendor.companyDirectNumber">
                 </div>
               </div>
               <div class="uk-margin">
                 <label class="uk-form-label" for="companyMobileNumber">(B) MOBILE NUMBER</label>
                 <div class="uk-form-controls">
-                  <input class="uk-input" name="companyMobileNumber" type="text" [(ngModel)]="vendor.companyMobileNumber" required>
+                  <input class="uk-input" name="companyMobileNumber" type="text" [(ngModel)]="vendor.companyMobileNumber">
                 </div>
               </div>
             </div>
             <div class="uk-margin">
-              <label class="uk-form-label" for="establishDate">DATE COMPANY WAS ESTABLISHED</label>
+              <label class="uk-form-label" for="establishDate">DATE COMPANY WAS ESTABLISHED*</label>
               <div class="uk-form-controls">
                 <input class="uk-input" name="establishDate" type="text" [(ngModel)]="vendor.establishDate" required>
               </div>
             </div>
             <div class="uk-margin">
-              <label class="uk-form-label" for="doExport">DO YOU EXPORT?</label>
+              <label class="uk-form-label" for="doExport">DO YOU EXPORT ?*</label>
               <div class="uk-form-controls uk-form-controls-text">
-                <input class="uk-radio" type="radio" value="Yes" name="doExport" (change)="doExport($event.target.value)">                Yes
-                <input class="uk-radio" type="radio" value="No" name="doExport" (change)="doExport($event.target.value)">                No
+                <input class="uk-radio" type="radio" value="Yes" name="doExport" (change)="doExport($event.target.value)" required>                Yes
+                <input class="uk-radio" type="radio" value="No" name="doExport" (change)="doExport($event.target.value)" required>                No
               </div>
             </div>
             <div class="uk-margin">
-              <label class="uk-form-label" for="haveExportLicense">DO YOU HAVE EXPORT LICENSE ?</label>
+              <label class="uk-form-label" for="haveExportLicense">DO YOU HAVE EXPORT LICENSE ?*</label>
               <div class="uk-form-controls uk-form-controls-text">
-                <input class="uk-radio" type="radio" value="Yes" name="haveExportLicense" (change)="haveExportLicense($event.target.value)">                Yes
-                <input class="uk-radio" type="radio" value="No" name="haveExportLicense" (change)="haveExportLicense($event.target.value)">                No
+                <input class="uk-radio" type="radio" value="Yes" name="haveExportLicense" (change)="haveExportLicense($event.target.value)" required>                Yes
+                <input class="uk-radio" type="radio" value="No" name="haveExportLicense" (change)="haveExportLicense($event.target.value)" required>                No
               </div>
             </div>
             <div class="uk-margin">
               <label class="uk-form-label" for="doShipGoodToOverseas">WILL YOU BE ABLE TO SHIP GOODS TO OUR
-                    DESIGNATION OVERSEAS</label>
+                    DESIGNATION OVERSEAS*</label>
               <div class="uk-form-controls uk-form-controls-text">
-                <input class="uk-radio" type="radio" value="Yes" name="doShipGoodToOverseas" (change)="doShipGoodToOverseas($event.target.value)">                Yes
-                <input class="uk-radio" type="radio" value="No" name="doShipGoodToOverseas" (change)="doShipGoodToOverseas($event.target.value)">                No
+                <input class="uk-radio" type="radio" value="Yes" name="doShipGoodToOverseas" (change)="doShipGoodToOverseas($event.target.value)" required>                Yes
+                <input class="uk-radio" type="radio" value="No" name="doShipGoodToOverseas" (change)="doShipGoodToOverseas($event.target.value)" required>                No
               </div>
             </div><br>
             <div class="uk-margin">
-              <label class="uk-form-label" for="categgories">WHAT PRODUCT CATEGGORIES DO YOU OFFER ?</label>
+              <label class="uk-form-label" for="categgories">WHAT PRODUCT CATEGGORIES DO YOU OFFER ?*</label>
               <div class="uk-form-controls">
                 <textarea class="uk-textarea" name="categgories" type="text" [(ngModel)]="vendor.categgories" required></textarea>
               </div>
@@ -117,30 +117,30 @@
             </div> -->
             <div class="uk-margin">
               <label class="uk-form-label" for="productCatalog">HOW CAN YOU SHARE YOUR PRODUCT CATALOG
-                        WITH US?</label>
+                        WITH US?*</label>
               <div class="uk-form-controls">
                 <input class="uk-input" name="productCatalog" type="text" [(ngModel)]="vendor.productCatalog" required>
               </div>
             </div>
             <div class="uk-margin">
-              <label class="uk-form-label" for="legalStructure">LEGAL STRUCTURE</label>
+              <label class="uk-form-label" for="legalStructure">LEGAL STRUCTURE*</label>
               <div class="uk-form-controls uk-form-controls-text">
-                <input class="uk-radio" type="radio" value="Corporation" name="legalStructure" (change)="legalStructure($event.target.value)">                Corporation
-                <input class="uk-radio" type="radio" value="Partnership" name="legalStructure" (change)="legalStructure($event.target.value)">                Partnership
-                <input class="uk-radio" type="radio" value="Sole Proprietorship" name="legalStructure" (change)="legalStructure($event.target.value)">                Sole Proprietorship
-                <input class="uk-radio" type="radio" value="Joint Venture" name="legalStructure" (change)="legalStructure($event.target.value)">                Joint Venture
-                <input class="uk-radio" type="radio" value="Franchise" name="legalStructure" (change)="legalStructure($event.target.value)">                Franchise
-                <input class="uk-radio" type="radio" value="Non-Profit" name="legalStructure" (change)="legalStructure($event.target.value)">                Non-Profit
+                <input class="uk-radio" type="radio" value="Corporation" name="legalStructure" (change)="legalStructure($event.target.value)"required>                Corporation
+                <input class="uk-radio" type="radio" value="Partnership" name="legalStructure" (change)="legalStructure($event.target.value)" required>                Partnership
+                <input class="uk-radio" type="radio" value="Sole Proprietorship" name="legalStructure" (change)="legalStructure($event.target.value)" required>                Sole Proprietorship
+                <input class="uk-radio" type="radio" value="Joint Venture" name="legalStructure" (change)="legalStructure($event.target.value)" required>                Joint Venture
+                <input class="uk-radio" type="radio" value="Franchise" name="legalStructure" (change)="legalStructure($event.target.value)" required>                Franchise
+                <input class="uk-radio" type="radio" value="Non-Profit" name="legalStructure" (change)="legalStructure($event.target.value)" required>                Non-Profit
               </div>
             </div>
             <div class="uk-margin">
-              <label class="uk-form-label" for="servicesDetails">DETAILS ON SERVICES OR GOODS YOUR COMPANY SUPPLIES</label>
+              <label class="uk-form-label" for="servicesDetails">DETAILS ON SERVICES OR GOODS YOUR COMPANY SUPPLIES*</label>
               <div class="uk-form-controls">
                 <textarea class="uk-textarea" name="servicesDetails" type="text" [(ngModel)]="vendor.servicesDetails" required></textarea>
               </div>
             </div>
             <div class="uk-margin">
-              <label class="uk-form-label" for="internationalBussiness">HAVE YOU PREVIOUSLY DONE BUSINESS WITH OTHER INTERNATIONAL ORGANIZATIONS ?</label>
+              <label class="uk-form-label" for="internationalBussiness">HAVE YOU PREVIOUSLY DONE BUSINESS WITH OTHER INTERNATIONAL ORGANIZATIONS ?*</label>
               <div class="uk-form-controls uk-form-controls-text">
                 <input class="uk-radio" type="radio" value="Yes" name="internationalBussiness" (change)="internationalBussiness($event.target.value)">                Yes
                 <input class="uk-radio" type="radio" value="No" name="internationalBussiness" (change)="internationalBussiness($event.target.value)">                No
@@ -152,44 +152,46 @@
           <h3 class="uk-accordion-title">PAYMENT</h3>
           <div class="uk-accordion-content">
             <div class="uk-margin">
-              <label class="uk-form-label" for="bankName">PAYPAL ID OR BANK NAME</label>
+              <label class="uk-form-label" for="bankName">BANK NAME*</label>
               <div class="uk-form-controls">
                 <input class="uk-input" name="bankName" type="text" [(ngModel)]="vendor.bankName" required>
               </div>
             </div>
             <div class="uk-margin">
-              <label class="uk-form-label" for="bankAddress">BANK ADDRESS</label>
+              <label class="uk-form-label" for="bankAddress">BANK ADDRESS*</label>
               <div class="uk-form-controls">
                 <input class="uk-input" name="bankAddress" type="text" [(ngModel)]="vendor.bankAddress" required>
               </div>
             </div>
             <div class="uk-margin">
-              <label class="uk-form-label" for="beneficiaryName">BENEFICIARY NAME</label>
+              <label class="uk-form-label" for="beneficiaryName">BENEFICIARY NAME*</label>
               <div class="uk-form-controls">
                 <input class="uk-input" name="beneficiaryName" type="text" [(ngModel)]="vendor.beneficiaryName" required>
               </div>
             </div>
             <div class="uk-margin">
               <label class="uk-form-label" for="iban">INTERNATIONAL BANK ACCOUNT NUMBER
-                  (IBAN)</label>
+                  (IBAN)*</label>
               <div class="uk-form-controls">
                 <input class="uk-input" name="iban" type="text" [(ngModel)]="vendor.iban" required>
               </div>
             </div>
             <div class="uk-margin">
-              <label class="uk-form-label" for="bic">SWIFT/BANK IDENTIFIER CODE (BIC)</label>
+              <label class="uk-form-label" for="bic">SWIFT/BANK IDENTIFIER CODE (BIC)*</label>
               <div class="uk-form-controls">
                 <input class="uk-input" name="bic" type="text" [(ngModel)]="vendor.bic" required>
               </div>
             </div>
             <div class="uk-margin">
-              <label class="uk-form-label" for="accountCurrency">ACCOUNT CURRENCY</label>
+              <label class="uk-form-label" for="accountCurrency">ACCOUNT CURRENCY*</label>
               <div class="uk-form-controls">
-                <input class="uk-input" name="accountCurrency" type="text" [(ngModel)]="vendor.accountCurrency" required>
+                  <select class="uk-select" name="accountCurrency" [(ngModel)]="vendor.accountCurrency">
+                      <option *ngFor="let c of currencies" [ngValue]="c.currency">{{c.currency}}</option>
+                  </select>
               </div>
             </div>
             <div class="uk-margin">
-              <label class="uk-form-label" for="bankAccountNumber">BANK ACCOUNT NUMBER</label>
+              <label class="uk-form-label" for="bankAccountNumber">BANK ACCOUNT NUMBER*</label>
               <div class="uk-form-controls">
                 <input class="uk-input" name="bankAccountNumber" type="text" [(ngModel)]="vendor.bankAccountNumber" required>
               </div>
@@ -197,21 +199,65 @@
           </div>
         </li>
         <li>
-          <h3 class="uk-accordion-title">SUPPORTING DOCUMENTATION</h3>
+          <h3 class="uk-accordion-title">SUPPORTING DOCUMENTATION (OPTIONAL)</h3>
           <div class="uk-accordion-content">
             <p>Please list documents you can submit or have attached, like licenses or FTI-F accreditation etc.</p>
+            <div>
+              <button class="uk-button uk-button-default uk-button-small" (click)="addNewDocument()">Add New Document</button>
+              <div class="uk-child-width-1-2 uk-text-center" uk-grid>
+                  <div>
+                      <div class="uk-margin">
+                          <label class="uk-form-label" for="documentType" style="width: 180px;">DOCUMENT TYPE</label>
+                          <div class="uk-form-controls" style="margin-left: 220px;">
+                            <input class="uk-input" name="documentType" type="text" [(ngModel)]="newDocument.documentType">
+                          </div>
+                        </div>
+                  </div>
+                  <div>
+                      <div class="uk-child-width-1-2 uk-text-center" uk-grid>
+                          <div>
+                              <input type="file" (change)="onChange($event)" />
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div *ngIf="vendorDocuments.length != 0">
+                <div class="uk-child-width-1-2 uk-text-center" uk-grid *ngFor="let doc of vendorDocuments; let $index = index">
+                  <div>
+                    <div class="uk-margin">
+                      <label class="uk-form-label" style="width: 180px;">DOCUMENT TYPE</label>
+                      <div class="uk-form-controls" style="margin-left: 220px;">
+                        <span >{{doc.documentType}}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="uk-child-width-1-2 uk-text-center" uk-grid>
+                      <div>
+                        {{doc.documentName}}
+                      </div>
+                      <div>
+                        <button class="uk-button uk-button-default uk-button-small" (click)="removeDocument($index)">Remove</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+
         </li>
         <li>
           <h3 class="uk-accordion-title">CERTIFICATION</h3>
           <div class="uk-accordion-content">
-            <p>I, the undersigned, hereby accept the WTO General Terms & Conditions, a copy of which has been provided to me,
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I, the undersigned, hereby accept the WTO General Terms & Conditions, a copy of which has been provided to me,
               and warrant that the information provided in this form is correct and, in the event of changes, details will
               be provided as soon as possible:</p>
+              <p> <label><input class="uk-checkbox" type="checkbox" [checked]="agreed" (change)="agreed = !agreed"> I agree.</label></p>
           </div>
         </li>
       </ul>
-      <button class="uk-button uk-button-primary pull-right" [disabled]="!f.form.valid" (click)="submit()">Submit</button>
+      <button class="uk-button uk-button-primary pull-right" [disabled]="!f.form.valid || !agreed" (click)="submit()">Submit</button>
     </form>
   </div>
   <div *ngIf="!formVisibilityFlag" class="container">
