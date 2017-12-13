@@ -19,18 +19,18 @@
                 <div class="uk-margin">
                         <div class="uk-inline">
                             <span class="uk-form-icon" uk-icon="icon: user"></span>
-                            <input class="uk-input" type="text" name="username" placeholder="Username" [(ngModel)]="model.username">
+                            <input class="uk-input" type="text" name="username" placeholder="Username" [(ngModel)]="model.username" required>
                         </div>
                     </div>
                 
                     <div class="uk-margin">
                         <div class="uk-inline">
                             <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-                            <input class="uk-input" type="password" name="password" placeholder="Password" [(ngModel)]="model.password">
+                            <input class="uk-input" type="password" name="password" placeholder="Password" [(ngModel)]="model.password" required>
                         </div>
                     </div>
-                    <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" type="submit">Login</button>
-                <!-- <button class="btn btn-primary btn-block login-button" type="submit"><i class="glyphicon glyphicon-new-window"></i> Login</button> -->
+                    <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" type="submit" [disabled]="!f.form.valid">Login</button>
+                    <button class="uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom" [routerLink]="['/signup']" >Sign Up</button>
 
             </form>
         </div>

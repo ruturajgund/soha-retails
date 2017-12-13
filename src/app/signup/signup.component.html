@@ -1,0 +1,47 @@
+<div class="container login-form">
+  <alert></alert>
+  <h2 class="login-title">- Please Sign Up -</h2>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <form name="form" (ngSubmit)="f.form.valid && signup()" #f="ngForm" novalidate>
+        <div class="uk-margin">
+          <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: happy"></span>
+            <input class="uk-input" type="text" name="name" placeholder="Full Name" [(ngModel)]="model.name" required>
+          </div>
+        </div>
+
+        <div class="uk-margin">
+          <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: mail"></span>
+            <input class="uk-input" type="email" name="email" placeholder="Email" [(ngModel)]="model.email" required>
+          </div>
+        </div>
+
+        <div class="uk-margin">
+          <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: phone"></span>
+            <input class="uk-input" type="text" name="mobile" placeholder="Mobile Number" [(ngModel)]="model.mobile" required>
+          </div>
+        </div>
+
+        <div class="uk-margin">
+          <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: user"></span>
+            <input class="uk-input" type="text" name="username" placeholder="Username" [(ngModel)]="model.username" required>
+          </div>
+        </div>
+
+        <div class="uk-margin">
+          <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: lock"></span>
+            <input class="uk-input" type="password" name="password" placeholder="Password" [(ngModel)]="model.password" required>
+          </div>
+        </div>
+
+        <button class="uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom" [disabled]="!f.form.valid">Sign Up</button>
+
+      </form>
+    </div>
+  </div>
+</div>

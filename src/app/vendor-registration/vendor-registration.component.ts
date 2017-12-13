@@ -30,6 +30,17 @@ export class VendorRegistrationComponent implements OnInit {
 
   ];
   agreed :boolean = false;
+  productCatalogTypes = [
+    {
+      type: 'Email'
+    },
+    {
+      type: 'Physical'
+    },
+    {
+      type: 'Web address'
+    }
+  ]
 
 
 

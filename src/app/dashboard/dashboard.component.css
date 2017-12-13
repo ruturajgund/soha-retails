@@ -4,6 +4,25 @@
 .navbar{
     margin-bottom: 0px;
 }
+
+.navbar-inverse {
+	background-color: #f3f3f3;
+	border-color: #f3f3f3;
+}
+
+.navbar-inverse .navbar-brand {
+	color: #848484;
+}
+
+.navbar-nav>li>a:hover{
+	color: #848484;
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+	color: #848484;
+	background-color: #f3f3f3;
+}
+
   .side-panel{
 		overflow-y: scroll;
 		height: 93%;

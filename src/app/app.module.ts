@@ -15,6 +15,7 @@ import {
 import { OrdersComponent } from './orders/orders.component';
 import { ReturnsComponent } from './returns/returns.component';
 import { VendorRegistrationComponent } from './vendor-registration/vendor-registration.component';
+import { SignupComponent } from './signup/signup.component';
 
 const ROUTES = [
   {
@@ -25,6 +26,10 @@ const ROUTES = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
   },
   {
     path: 'dashboard',
@@ -60,7 +65,8 @@ const ROUTES = [
     AlertComponent,
     OrdersComponent,
     ReturnsComponent,
-    VendorRegistrationComponent
+    VendorRegistrationComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

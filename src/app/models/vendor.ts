@@ -17,7 +17,8 @@ export class Vendor{
     haveExportLicense: string;
     doShipGoodToOverseas: string;
     categgories: string;
-    productCatalog: string;
+    productCatalogType: string;
+    productCatalogDetails: string;
     legalStructure: string;
     servicesDetails: string;
     internationalBussiness: string;

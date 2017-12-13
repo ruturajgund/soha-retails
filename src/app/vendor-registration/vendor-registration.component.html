@@ -91,16 +91,20 @@
             <div class="uk-margin">
               <label class="uk-form-label" for="haveExportLicense">DO YOU HAVE EXPORT LICENSE ?*</label>
               <div class="uk-form-controls uk-form-controls-text">
-                <input class="uk-radio" type="radio" value="Yes" name="haveExportLicense" (change)="haveExportLicense($event.target.value)" required>                Yes
-                <input class="uk-radio" type="radio" value="No" name="haveExportLicense" (change)="haveExportLicense($event.target.value)" required>                No
+                <input class="uk-radio" type="radio" value="Yes" name="haveExportLicense" (change)="haveExportLicense($event.target.value)"
+                  required> Yes
+                <input class="uk-radio" type="radio" value="No" name="haveExportLicense" (change)="haveExportLicense($event.target.value)"
+                  required> No
               </div>
             </div>
             <div class="uk-margin">
               <label class="uk-form-label" for="doShipGoodToOverseas">WILL YOU BE ABLE TO SHIP GOODS TO OUR
                     DESIGNATION OVERSEAS*</label>
               <div class="uk-form-controls uk-form-controls-text">
-                <input class="uk-radio" type="radio" value="Yes" name="doShipGoodToOverseas" (change)="doShipGoodToOverseas($event.target.value)" required>                Yes
-                <input class="uk-radio" type="radio" value="No" name="doShipGoodToOverseas" (change)="doShipGoodToOverseas($event.target.value)" required>                No
+                <input class="uk-radio" type="radio" value="Yes" name="doShipGoodToOverseas" (change)="doShipGoodToOverseas($event.target.value)"
+                  required> Yes
+                <input class="uk-radio" type="radio" value="No" name="doShipGoodToOverseas" (change)="doShipGoodToOverseas($event.target.value)"
+                  required> No
               </div>
             </div><br>
             <div class="uk-margin">
@@ -119,18 +123,27 @@
               <label class="uk-form-label" for="productCatalog">HOW CAN YOU SHARE YOUR PRODUCT CATALOG
                         WITH US?*</label>
               <div class="uk-form-controls">
-                <input class="uk-input" name="productCatalog" type="text" [(ngModel)]="vendor.productCatalog" required>
+                <select class="uk-select" name="productCatalogType" [(ngModel)]="vendor.productCatalogType" style="margin-bottom: 10px;">
+                      <option *ngFor="let c of productCatalogTypes" [ngValue]="c.type">{{c.type}}</option>
+                  </select>
+                <textarea class="uk-textarea" name="productCatalogDetails" type="text" [(ngModel)]="vendor.productCatalogDetails" required></textarea>
               </div>
             </div>
             <div class="uk-margin">
               <label class="uk-form-label" for="legalStructure">LEGAL STRUCTURE*</label>
               <div class="uk-form-controls uk-form-controls-text">
-                <input class="uk-radio" type="radio" value="Corporation" name="legalStructure" (change)="legalStructure($event.target.value)"required>                Corporation
-                <input class="uk-radio" type="radio" value="Partnership" name="legalStructure" (change)="legalStructure($event.target.value)" required>                Partnership
-                <input class="uk-radio" type="radio" value="Sole Proprietorship" name="legalStructure" (change)="legalStructure($event.target.value)" required>                Sole Proprietorship
-                <input class="uk-radio" type="radio" value="Joint Venture" name="legalStructure" (change)="legalStructure($event.target.value)" required>                Joint Venture
-                <input class="uk-radio" type="radio" value="Franchise" name="legalStructure" (change)="legalStructure($event.target.value)" required>                Franchise
-                <input class="uk-radio" type="radio" value="Non-Profit" name="legalStructure" (change)="legalStructure($event.target.value)" required>                Non-Profit
+                <input class="uk-radio" type="radio" value="Corporation" name="legalStructure" (change)="legalStructure($event.target.value)"
+                  required> Corporation
+                <input class="uk-radio" type="radio" value="Partnership" name="legalStructure" (change)="legalStructure($event.target.value)"
+                  required> Partnership
+                <input class="uk-radio" type="radio" value="Sole Proprietorship" name="legalStructure" (change)="legalStructure($event.target.value)"
+                  required> Sole Proprietorship
+                <input class="uk-radio" type="radio" value="Joint Venture" name="legalStructure" (change)="legalStructure($event.target.value)"
+                  required> Joint Venture
+                <input class="uk-radio" type="radio" value="Franchise" name="legalStructure" (change)="legalStructure($event.target.value)"
+                  required> Franchise
+                <input class="uk-radio" type="radio" value="Non-Profit" name="legalStructure" (change)="legalStructure($event.target.value)"
+                  required> Non-Profit
               </div>
             </div>
             <div class="uk-margin">
@@ -185,7 +198,7 @@
             <div class="uk-margin">
               <label class="uk-form-label" for="accountCurrency">ACCOUNT CURRENCY*</label>
               <div class="uk-form-controls">
-                  <select class="uk-select" name="accountCurrency" [(ngModel)]="vendor.accountCurrency">
+                <select class="uk-select" name="accountCurrency" [(ngModel)]="vendor.accountCurrency">
                       <option *ngFor="let c of currencies" [ngValue]="c.currency">{{c.currency}}</option>
                   </select>
               </div>
@@ -205,21 +218,21 @@
             <div>
               <button class="uk-button uk-button-default uk-button-small" (click)="addNewDocument()">Add New Document</button>
               <div class="uk-child-width-1-2 uk-text-center" uk-grid>
-                  <div>
-                      <div class="uk-margin">
-                          <label class="uk-form-label" for="documentType" style="width: 180px;">DOCUMENT TYPE</label>
-                          <div class="uk-form-controls" style="margin-left: 220px;">
-                            <input class="uk-input" name="documentType" type="text" [(ngModel)]="newDocument.documentType">
-                          </div>
-                        </div>
+                <div>
+                  <div class="uk-margin">
+                    <label class="uk-form-label" for="documentType" style="width: 180px;">DOCUMENT TYPE</label>
+                    <div class="uk-form-controls" style="margin-left: 220px;">
+                      <input class="uk-input" name="documentType" type="text" [(ngModel)]="newDocument.documentType">
+                    </div>
                   </div>
-                  <div>
-                      <div class="uk-child-width-1-2 uk-text-center" uk-grid>
-                          <div>
-                              <input type="file" (change)="onChange($event)" />
-                          </div>
-                      </div>
+                </div>
+                <div>
+                  <div class="uk-child-width-1-2 uk-text-center" uk-grid>
+                    <div>
+                      <input type="file" (change)="onChange($event)" />
+                    </div>
                   </div>
+                </div>
               </div>
               <div *ngIf="vendorDocuments.length != 0">
                 <div class="uk-child-width-1-2 uk-text-center" uk-grid *ngFor="let doc of vendorDocuments; let $index = index">
@@ -227,7 +240,7 @@
                     <div class="uk-margin">
                       <label class="uk-form-label" style="width: 180px;">DOCUMENT TYPE</label>
                       <div class="uk-form-controls" style="margin-left: 220px;">
-                        <span >{{doc.documentType}}</span>
+                        <span>{{doc.documentType}}</span>
                       </div>
                     </div>
                   </div>
@@ -250,10 +263,10 @@
         <li>
           <h3 class="uk-accordion-title">CERTIFICATION</h3>
           <div class="uk-accordion-content">
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I, the undersigned, hereby accept the WTO General Terms & Conditions, a copy of which has been provided to me,
-              and warrant that the information provided in this form is correct and, in the event of changes, details will
-              be provided as soon as possible:</p>
-              <p> <label><input class="uk-checkbox" type="checkbox" [checked]="agreed" (change)="agreed = !agreed"> I agree.</label></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I, the undersigned, hereby accept the WTO General
+              Terms & Conditions, a copy of which has been provided to me, and warrant that the information provided in this
+              form is correct and, in the event of changes, details will be provided as soon as possible:</p>
+            <p> <label><input class="uk-checkbox" type="checkbox" [checked]="agreed" (change)="agreed = !agreed"> I agree.</label></p>
           </div>
         </li>
       </ul>
@@ -262,6 +275,6 @@
   </div>
   <div *ngIf="!formVisibilityFlag" class="container">
     <h1 style="padding: 30px;">Thank You....!Your Details have been saved successfully.</h1>
-    <button class="uk-button uk-button-secondary uk-button-large" href="https://menlily.com/">GO BACK TO ME'N LILY</button>
+    <button class="uk-button uk-button-secondary uk-button-large"><a href="https://menlily.com/">GO BACK TO ME'N LILY</a></button>
   </div>
 </div>

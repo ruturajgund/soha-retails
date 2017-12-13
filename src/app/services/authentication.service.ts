@@ -29,7 +29,7 @@ export class AuthenticationService {
                     this.token = token;
  
                     // store username and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('currentUser', JSON.stringify({ username: username, firstName: data.currentUser.firstName, lastName: data.currentUser.lastName,  role: data.currentUser.role,mobile: data.currentUser.mobile, token: token }));
+                    localStorage.setItem('currentUser', JSON.stringify({ username: username, name: data.currentUser.name,  role: data.currentUser.role,mobile: data.currentUser.mobile, email: data.currentUser.email, token: token }));
                     console.log(localStorage);
                     // return true to indicate successful login
                     return true;
@@ -45,5 +45,12 @@ export class AuthenticationService {
         localStorage.removeItem('currentUser');
         console.log(localStorage);
         this.router.navigate(['/login']);
+    }
+
+    signup(user){
+        return this.http.post('/api/signup', user)
+        .map((response: Response) => {
+            return response;
+        });
     }
 }
