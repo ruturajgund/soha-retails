@@ -1,0 +1,36 @@
+@media (min-width: 960px)
+{
+    .uk-form-horizontal .uk-form-label {
+        width: 70px;
+        margin: 0px;
+    }
+
+    .uk-form-horizontal .uk-form-controls {
+        margin-left: 60px;
+    }
+}
+
+form{
+    font-size: 12px;
+}
+
+#form-horizontal-text{
+    position: relative;
+    top: 2px;
+}
+
+.card-background-image{
+    background-image: url(http://eskipaper.com/images/colorful-waves-1.jpg);
+    /* color: white; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.uk-form-label{
+    color: #9a9a9a;
+}
+
+.uk-form-controls {
+    color: #9a9a9a;
+}

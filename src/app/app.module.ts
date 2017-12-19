@@ -16,6 +16,8 @@ import { OrdersComponent } from './orders/orders.component';
 import { ReturnsComponent } from './returns/returns.component';
 import { VendorRegistrationComponent } from './vendor-registration/vendor-registration.component';
 import { SignupComponent } from './signup/signup.component';
+import { VendorsComponent } from './vendors/vendors.component';
+import { ViewVendorComponent } from './view-vendor/view-vendor.component';
 
 const ROUTES = [
   {
@@ -51,6 +53,14 @@ const ROUTES = [
       {
         path: 'vendorRegistration',
         component: VendorRegistrationComponent
+      },
+      {
+        path: 'vendors',
+        component: VendorsComponent
+      },
+      {
+        path: 'viewVendor',
+        component: ViewVendorComponent
       }
     ]
   }
@@ -66,7 +76,9 @@ const ROUTES = [
     OrdersComponent,
     ReturnsComponent,
     VendorRegistrationComponent,
-    SignupComponent
+    SignupComponent,
+    VendorsComponent,
+    ViewVendorComponent
   ],
   imports: [
     BrowserModule,

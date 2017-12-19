@@ -103,8 +103,6 @@ export class VendorRegistrationComponent implements OnInit {
 
   submit() {
     this.spinnerFlag = true;
-    console.log(this.vendorDocuments);
-
     this.vendorService.saveVendorDetails(this.vendor).subscribe(
       response => {
         var data = response.json();

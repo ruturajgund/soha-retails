@@ -1,0 +1,243 @@
+<div class="container">
+  <div class="row">
+      <button class="uk-button uk-button-default uk-button-small" (click)="back()">Back</button>
+  </div>
+
+  <form class="uk-form uk-form-stacked uk-form-horizontal vendor-form-container" name="form" #f="ngForm" novalidate>
+      <ul uk-accordion="multiple: true">
+        <li class="uk-open">
+          <h3 class="uk-accordion-title">COMPANY DETAILS AND GENERAL INFORMATION</h3>
+          <div class="uk-accordion-content">
+            <div class="uk-margin">
+              <label class="uk-form-label" for="bussinessName">NAME OF COMPANY/BUSINESS:</label>
+              <div class="uk-form-controls">
+                <span>{{vendor.bussinessName}}</span>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="address">ADDRESS:</label>
+              <div class="uk-form-controls">
+                  <span>{{vendor.address}}</span>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="telephoneNumber">TELEPHONE NUMBER:</label>
+              <div class="uk-form-controls">
+                  <span>{{vendor.telephoneNumber}}</span>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="faxNumber">FAX NUMBER:</label>
+              <div class="uk-form-controls">
+                  <span>{{vendor.faxNumber || '--'}}</span>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="email">E-MAIL ADDRESS:</label>
+              <div class="uk-form-controls">
+                  <span>{{vendor.email}}</span>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="wedsiteAddress">WEB SITE ADDRESS:</label>
+              <div class="uk-form-controls">
+                  <span>{{vendor.wedsiteAddress || '--'}}</span>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="companyName">NAME & TITLE OF COMPANY
+                        REPRESENTATIVE:</label>
+              <div class="uk-form-controls">
+                  <span>{{vendor.companyName}}</span>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="companyEmail">DIRECT E-MAIL ADDRESS OF COMPANY
+                        REPRESENTATIVE:</label>
+              <div class="uk-form-controls">
+                  <span>{{vendor.companyEmail}}</span>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="form-stacked-text" style="width: 100%;">TELEPHONE NUMBERS OF COMPANY
+                        REPRESENTATIVE:</label><br><br>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="companyDirectNumber">(A) DIRECT NUMBER:</label>
+                <div class="uk-form-controls">
+                    <span>{{vendor.companyDirectNumber || '--'}}</span>
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="companyMobileNumber">(B) MOBILE NUMBER:</label>
+                <div class="uk-form-controls">
+                    <span>{{vendor.companyMobileNumber || '--'}}</span>
+                </div>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="establishDate">DATE COMPANY WAS ESTABLISHED:</label>
+              <div class="uk-form-controls">
+                  <span>{{vendor.establishDate}}</span>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="doExport">DO YOU EXPORT ?:</label>
+              <div class="uk-form-controls uk-form-controls-text">
+                  <span>{{vendor.doExport}}</span>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="haveExportLicense">DO YOU HAVE EXPORT LICENSE ?:</label>
+              <div class="uk-form-controls uk-form-controls-text">
+                  <span>{{vendor.haveExportLicense}}</span>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="doShipGoodToOverseas">WILL YOU BE ABLE TO SHIP GOODS TO OUR
+                    DESIGNATION OVERSEAS:</label>
+              <div class="uk-form-controls uk-form-controls-text">
+                  <span>{{vendor.doShipGoodToOverseas}}</span>
+              </div>
+            </div><br>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="categgories">WHAT PRODUCT CATEGGORIES DO YOU OFFER ?:</label>
+              <div class="uk-form-controls">
+                  <span>{{vendor.categgories}}</span>
+              </div>
+            </div>
+            <!-- <div class="uk-margin">
+              <label class="uk-form-label" for="form-stacked-text">WEBSITE ADDRESS (IF ANY)</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" id="form-stacked-text" type="text">
+              </div>
+            </div> -->
+            <div class="uk-margin">
+              <label class="uk-form-label" for="productCatalog">HOW CAN YOU SHARE YOUR PRODUCT CATALOG
+                        WITH US?:</label>  
+              <div class="uk-form-controls">
+                  <span>{{vendor.productCatalogType || '--'}}</span><br>
+                  <span>{{vendor.productCatalogDetails || '--'}}</span>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="legalStructure">LEGAL STRUCTURE:</label>
+              <div class="uk-form-controls uk-form-controls-text">
+                  <span>{{vendor.legalStructure}}</span>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="servicesDetails">DETAILS ON SERVICES OR GOODS YOUR COMPANY SUPPLIES:</label>
+              <div class="uk-form-controls">
+                  <span>{{vendor.servicesDetails}}</span>
+              </div>
+            </div><br>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="internationalBussiness">HAVE YOU PREVIOUSLY DONE BUSINESS WITH OTHER INTERNATIONAL ORGANIZATIONS ?:</label>
+              <div class="uk-form-controls uk-form-controls-text">
+                  <span>{{vendor.internationalBussiness}}</span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <h3 class="uk-accordion-title">PAYMENT</h3>
+          <div class="uk-accordion-content">
+            <div class="uk-margin">
+              <label class="uk-form-label" for="bankName">BANK NAME:</label>
+              <div class="uk-form-controls">
+                  <span>{{vendor.bankName}}</span>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="bankAddress">BANK ADDRESS:</label>
+              <div class="uk-form-controls">
+                  <span>{{vendor.bankAddress}}</span>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="beneficiaryName">BENEFICIARY NAME:</label>
+              <div class="uk-form-controls">
+                  <span>{{vendor.beneficiaryName}}</span>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="iban">INTERNATIONAL BANK ACCOUNT NUMBER
+                  (IBAN):</label>
+              <div class="uk-form-controls">
+                  <span>{{vendor.iban}}</span>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="bic">SWIFT/BANK IDENTIFIER CODE (BIC):</label>
+              <div class="uk-form-controls">
+                  <span>{{vendor.bic}}</span>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="accountCurrency">ACCOUNT CURRENCY:</label>
+              <div class="uk-form-controls">
+                  <span>{{vendor.accountCurrency}}</span>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="bankAccountNumber">BANK ACCOUNT NUMBER:</label>
+              <div class="uk-form-controls">
+                  <span>{{vendor.bankAccountNumber}}</span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- <li>
+          <h3 class="uk-accordion-title">SUPPORTING DOCUMENTATION (OPTIONAL)</h3>
+          <div class="uk-accordion-content">
+            <p>Please list documents you can submit or have attached, like licenses or FTI-F accreditation etc.</p>
+            <div>
+              <button class="uk-button uk-button-default uk-button-small" (click)="addNewDocument()">Add New Document</button>
+              <div class="uk-child-width-1-2 uk-text-center" uk-grid>
+                <div>
+                  <div class="uk-margin">
+                    <label class="uk-form-label" for="documentType" style="width: 180px;">DOCUMENT TYPE</label>
+                    <div class="uk-form-controls" style="margin-left: 220px;">
+                      <input class="uk-input" name="documentType" type="text" [(ngModel)]="newDocument.documentType">
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="uk-child-width-1-2 uk-text-center" uk-grid>
+                    <div>
+                      <input type="file" (change)="onChange($event)" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="vendorDocuments.length != 0">
+                <div class="uk-child-width-1-2 uk-text-center" uk-grid *ngFor="let doc of vendorDocuments; let $index = index">
+                  <div>
+                    <div class="uk-margin">
+                      <label class="uk-form-label" style="width: 180px;">DOCUMENT TYPE</label>
+                      <div class="uk-form-controls" style="margin-left: 220px;">
+                        <span>{{doc.documentType}}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="uk-child-width-1-2 uk-text-center" uk-grid>
+                      <div>
+                        {{doc.documentName}}
+                      </div>
+                      <div>
+                        <button class="uk-button uk-button-default uk-button-small" (click)="removeDocument($index)">Remove</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </li> -->
+        
+      </ul>
+      
+    </form>
+</div>

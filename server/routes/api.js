@@ -6,6 +6,7 @@ var bcrypt = require('bcryptjs');
 // var Q = require('q');
 var config = require('../../config.json');
 var mongodb = require("mongodb");
+var ObjectId = require('mongodb').ObjectID;
 
 var db;
 
@@ -34,6 +35,8 @@ router.get('/getAllReturns', getAllReturns);
 router.post('/searchBy', searchBy);
 router.post('/saveVendorDetails', saveVendorDetails);
 router.post('/signup', signup);
+router.get('/getAllVendors', getAllVendors);
+router.get('/getVendorDetailsById/:id', getVendorDetailsById);
 
 var currentUser;
 function register(req, res) {
@@ -154,5 +157,20 @@ function signup(req, res) {
   });
 }
 
+function getAllVendors(req, res) {
+  db.collection(VENDORS_COLLECTION).find().toArray(function (error, vendors) {
+    if (error) res.send({ message: "Database Problem.", status: 500 });
+
+    res.send({ vendors: vendors, status: 200 });
+  });
+}
+
+function getVendorDetailsById(req,res){
+  db.collection(VENDORS_COLLECTION).findOne({'_id': new ObjectId(req.params.id)}, function(error, vendor){
+    if(error) res.send({message:"Database Problem.",status: 500});
+    
+    res.send({vendor: vendor, status: 200});
+  })
+}
 
 module.exports = router;

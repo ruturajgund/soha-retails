@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" *ngFor="let vendor of vendors">
+        <div class="uk-card uk-card-default uk-width-1-1@m card-background-image">
+            <form class="uk-form-horizontal uk-margin-large">
+
+                <div class="uk-card-header">
+                    <div class="uk-grid-small uk-flex-middle" uk-grid>
+                        <div class="uk-width-expand">
+                            <h3 class="uk-card-title uk-margin-remove-bottom">
+                                {{vendor.bussinessName}}</h3>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="form-horizontal-text" style="width: 55px;margin: 0px;">Mobile: </label>
+                                <div class="uk-form-controls" style="margin-left: 60px;">
+                                    <span id="form-horizontal-text">{{vendor.telephoneNumber}}</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-card-body">
+                        <div class="uk-margin">
+                                <label class="uk-form-label" for="form-horizontal-text">Address: </label>
+                                <div class="uk-form-controls">
+                                    <span id="form-horizontal-text">{{vendor.address}}</span>
+                                </div>
+                            </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">Email: </label>
+                        <div class="uk-form-controls">
+                            <span id="form-horizontal-text">{{vendor.email}}</span>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                            <label class="uk-form-label" for="form-horizontal-text">Website: </label>
+                            <div class="uk-form-controls">
+                                <span id="form-horizontal-text"><a href="{{vendor.wedsiteAddress}}" target="_blank">{{vendor.wedsiteAddress || '--'}}</a></span>
+                            </div>
+                        </div>
+                </div>
+                <div class="uk-card-footer">
+                    <a class="uk-button uk-button-text" (click)="getVendorDetails(vendor._id)">Read more</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -15,4 +15,16 @@ export class VendorService {
             return response;
         });
     }
+
+    getAllVendors() {
+        return this.http.get('/api/getAllVendors').map((response: Response) => {
+            return response;
+        });
+    }
+
+    getVendorDetails(id){
+        return this.http.get('/api/getVendorDetailsById/'+ id).map((response: Response) => {
+            return response;
+        });
+    }
 }
